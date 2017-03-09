@@ -35,7 +35,7 @@ public class AlarmView extends LinearLayout {
     public AlarmView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
-    }
+    } 
 
     public AlarmView(Context context, AttributeSet attrs) {
         super(context, attrs);

@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -27,25 +28,17 @@ import cp.junyou.com.clockporject.utils.logUtil;
 
 public class MainActivity extends Activity {
 
-    private TabHost tabHoat;
-    private StopWatchView stopWatchView;
-
     protected Button btneditAlarm;
+    protected Button addBut;
+
+    private TextView tabDeal;
+    private TextView tabPoi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        tabHoat = (TabHost) findViewById(android.R.id.tabhost);
-//        tabHoat.setup();
-
-//        tabHoat.addTab(tabHoat.newTabSpec("tabTime").setIndicator("Ê±ÖÓ").setContent(R.id.tabTime));
- //       tabHoat.addTab(tabHoat.newTabSpec("tabAlarm").setIndicator("alorm").setContent(R.id.tabAlorm));
-//        tabHoat.addTab(tabHoat.newTabSpec("tabTimer").setIndicator("¼ÆÊ±Æ÷").setContent(R.id.tabtimer));
-//        tabHoat.addTab(tabHoat.newTabSpec("tabStopWatch").setIndicator("Ãë±í").setContent(R.id.tabStopMatch));
-
-//        stopWatchView = (StopWatchView) findViewById(R.id.tabStopMatch);
         btneditAlarm = (Button)findViewById(R.id.edit_but);
         btneditAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,8 +49,38 @@ public class MainActivity extends Activity {
                 startActivity(i);
             }
         });
+        addBut = (Button)findViewById(R.id.add_but);
+        if (addBut != null)
+        {
+
+            addBut.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    try {
+                        logUtil.i("TAG","add but!");
+                        Intent i = new Intent(MainActivity.this, SetAlarmActivity.class);
+                        // 添加Alarm
+                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(i);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+
+                }
+            });
+
+        }
+
+        bindView();
     }
 
+    private void bindView(){
+//        tabDeal = (TextView)this.findViewById(R.id.txt_deal);
+//        tabPoi = (TextView)this.findViewById(R.id.txt_poi);
+//
+//        tabDeal.setOnClickListener(this);
+//        tabPoi.setOnClickListener(this);
+    }
 
 //    btnAddAlarm.setOnClickListener(new View.OnClickListener() {
 //        @Override
@@ -71,6 +94,22 @@ public class MainActivity extends Activity {
         super.onDestroy();
     }
 
+//    private View.OnClickListener onClickSetting = new View.OnClickListener()
+//    {
+//        @Override
+//        public void onClick(View v)
+//        {
+////            Log.i("TAG","setting");
+//            try {
+//                Intent settingAvt = new Intent(MainActivity.this,SetAlarmActivity.class); //PersonalCenterActivity,SettingActivity
+//                settingAvt.putExtra("title", "个人中心");
+//                settingAvt.putExtra("frag_id", "GeneralSettingsFragment");
+//                startActivity(settingAvt);
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+//        }
+//    };
     }
 
 

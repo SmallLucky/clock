@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-import cp.junyou.com.clockporject.R;
+//import cp.junyou.com.clockporject.R;
 
 public class TimerView extends LinearLayout {
 
