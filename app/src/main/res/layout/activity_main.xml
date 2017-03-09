@@ -35,7 +35,51 @@
             android:id="@+id/add_but"
             />
     </RelativeLayout>
+
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/tab_menu"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <TextView
+            android:id="@+id/tab_deal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:text="闹钟"
+            android:textColor="@color/colordark"
+            tools:ignore="Suspicious0dp" />
+
+        <TextView
+            android:id="@+id/tab_poi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:textColor="@color/colordark"
+            android:text="就寝"/>
+    </LinearLayout>
+    <View
+        android:id="@+id/div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/colorBottonWord"
+        android:layout_above="@id/tab_menu"/>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_header"
+        android:layout_above="@+id/tab_menu"
+        android:background="@color/colorbluer">
+
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -43,98 +87,121 @@
         >
 
         <TabWidget
-            android:id="@android:id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+        android:id="@android:id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
         </TabWidget>
 
         <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+        android:id="@android:id/tabcontent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
-            <cp.junyou.com.clockporject.AlarmView
-                android:id="@+id/tabAlorm"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+        <cp.junyou.com.clockporject.AlarmView
+        android:id="@+id/tabAlorm"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
-                <ListView
-                    android:id="@+id/lvAlarmList"
-                    android:layout_width="fill_parent"
-                    android:layout_weight="1"
-                    android:layout_height="0dp"
-                    >
-                </ListView>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView android:id="@+id/title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="22px" />
-                    <TextView android:id="@+id/info"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="13px" />
-                </LinearLayout>
-                <Button
-                    android:id="@+id/btnAddAlarm"
-                    android:text="添加闹钟"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="@color/colorbluer"
-                    >
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:id="@+id/tab_menu"
-                    android:orientation="horizontal"
-                    android:layout_alignParentBottom="true"
-                    >
-                    <TextView
-                        android:id="@+id/tab_deal"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:drawablePadding="3dp"
-                        android:gravity="center"
-                        android:text="闹钟"
-                        android:textColor="@color/colordark"
-                        tools:ignore="Suspicious0dp" />
-
-                    <TextView
-                        android:id="@+id/txt_poi"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:drawablePadding="3dp"
-                        android:gravity="center"
-                        android:textColor="@color/colordark"
-                        android:text="就寝"/>
-                </LinearLayout>
-                <!--<View-->
-                    <!--android:id="@+id/div_tab_bar"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="2px"-->
-                    <!--android:layout_above="@id/tab_menu"/>-->
-
-                <!--<FrameLayout-->
-                    <!--android:id="@+id/fragment_container"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:layout_below="@id/tabAlorm"-->
-                    <!--android:layout_above="@id/tab_menu">-->
-                <!--</FrameLayout>-->
-            </cp.junyou.com.clockporject.AlarmView>
+        <ListView
+        android:id="@+id/lvAlarmList"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        >
+        </ListView>
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFFFF"
+        android:textSize="22px" />
+        <TextView android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFFFF"
+        android:textSize="13px" />
+        </LinearLayout>
+        <Button
+        android:id="@+id/btnAddAlarm"
+        android:text="添加闹钟"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorbluer"
+        android:id="@+id/tianqi"
+        android:orientation="horizontal">
+        </LinearLayout>
+        </cp.junyou.com.clockporject.AlarmView>
         </FrameLayout>
-    </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_below="@+id/layout_header"-->
+        <!--&gt;-->
+
+        <!--<TabWidget-->
+            <!--android:id="@android:id/tabs"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" >-->
+        <!--</TabWidget>-->
+
+        <!--<FrameLayout-->
+            <!--android:id="@android:id/tabcontent"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" >-->
+
+            <!--<cp.junyou.com.clockporject.AlarmView-->
+                <!--android:id="@+id/tabAlorm"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" >-->
+
+                <!--<ListView-->
+                    <!--android:id="@+id/lvAlarmList"-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--&gt;-->
+                <!--</ListView>-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content">-->
+                    <!--<TextView android:id="@+id/title"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textColor="#FFFFFFFF"-->
+                        <!--android:textSize="22px" />-->
+                    <!--<TextView android:id="@+id/info"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textColor="#FFFFFFFF"-->
+                        <!--android:textSize="13px" />-->
+                <!--</LinearLayout>-->
+                <!--<Button-->
+                    <!--android:id="@+id/btnAddAlarm"-->
+                    <!--android:text="添加闹钟"-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--/>-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="200dp"-->
+                    <!--android:background="@color/colorbluer"-->
+                    <!--android:id="@+id/tianqi"-->
+                    <!--android:orientation="horizontal">-->
+                <!--</LinearLayout>-->
+            <!--</cp.junyou.com.clockporject.AlarmView>-->
+        <!--</FrameLayout>-->
+    <!--</LinearLayout>-->
 
 </RelativeLayout>
